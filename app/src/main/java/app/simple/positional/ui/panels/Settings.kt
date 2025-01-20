@@ -84,7 +84,6 @@ class Settings : ScopedFragment(), CoordinatesCallback, PopupMenuCallback {
     private lateinit var coordinatesFormat: TextView
     private lateinit var inure: DynamicRippleConstraintLayout
 
-
     private lateinit var toggleKeepScreenOn: SwitchView
     private lateinit var toggleCustomLocation: SwitchView
     private lateinit var toggleSkipSplashScreen: SwitchView
@@ -95,7 +94,6 @@ class Settings : ScopedFragment(), CoordinatesCallback, PopupMenuCallback {
     private lateinit var currentLanguage: TextView
     private lateinit var currentLocationProvider: TextView
     private lateinit var foundIssues: TextView
-    private lateinit var telegramGroup: DynamicRippleTextView
     private lateinit var myOtherApps: DynamicRippleTextView
 
     private lateinit var permissionContracts: ActivityResultLauncher<Array<String>>
@@ -143,7 +141,6 @@ class Settings : ScopedFragment(), CoordinatesCallback, PopupMenuCallback {
         legalNotes = view.findViewById(R.id.legal_notes)
         github = view.findViewById(R.id.github)
         foundIssues = view.findViewById(R.id.found_issues)
-        telegramGroup = view.findViewById(R.id.telegram_group)
         myOtherApps = view.findViewById(R.id.my_other_apps)
         translate = view.findViewById(R.id.translate)
         keepScreenOn = view.findViewById(R.id.setting_keep_screen_on)
@@ -313,12 +310,6 @@ class Settings : ScopedFragment(), CoordinatesCallback, PopupMenuCallback {
         foundIssues.setOnClickListener {
             val intent = Intent(requireActivity(), WebPageViewerActivity::class.java)
             intent.putExtra("source", "Found Issue")
-            startActivity(intent)
-        }
-
-        telegramGroup.setOnClickListener {
-            val uri: Uri = Uri.parse("https://t.me/pstnl")
-            val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
 

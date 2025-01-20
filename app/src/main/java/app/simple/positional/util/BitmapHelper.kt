@@ -70,7 +70,7 @@ object BitmapHelper {
             newW = h
             newH = w
         }
-        val rotatedBitmap = Bitmap.createBitmap(newW, newH, bitmap.config)
+        val rotatedBitmap = Bitmap.createBitmap(newW, newH, bitmap.config!!)
         val canvas = Canvas(rotatedBitmap)
         val rect = Rect(0, 0, newW, newH)
         val matrix = Matrix()
@@ -95,7 +95,7 @@ object BitmapHelper {
             newH = w
         }
 
-        val rotatedBitmap = Bitmap.createBitmap(newW, newH, bitmap.config)
+        val rotatedBitmap = Bitmap.createBitmap(newW, newH, bitmap.config!!)
         val canvas = Canvas(rotatedBitmap)
         val rect = Rect(0, 0, newW, newH)
         val matrix = Matrix()

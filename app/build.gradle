@@ -49,13 +49,13 @@ if (googleMapsAPIKey == noKeyFound) {
 
 android {
 
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "app.simple.positional"
         minSdkVersion 24
         //noinspection OldTargetApi
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 180080
         versionName "v180.8.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -105,12 +105,12 @@ android {
 
     compileOptions {
         coreLibraryDesugaringEnabled true
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_19
+        targetCompatibility JavaVersion.VERSION_19
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17
+        jvmTarget = JavaVersion.VERSION_19
     }
 
     namespace 'app.simple.positional'
@@ -163,7 +163,7 @@ dependencies {
     // Room components
     implementation "androidx.room:room-ktx:2.6.1"
     //noinspection KaptUsageInsteadOfKsp
-    kapt "androidx.room:room-compiler:2.6.1"
+    ksp "androidx.room:room-compiler:2.6.1"
     androidTestImplementation "androidx.room:room-testing:2.6.1"
 
     // Leak Canary -- debugImplementation because LeakCanary should only run in debug builds.
